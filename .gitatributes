@@ -1,0 +1,2 @@
+# forcing text to LF
+* text = auto eof = lf
