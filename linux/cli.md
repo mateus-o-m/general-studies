@@ -1,22 +1,22 @@
-## CLI
+## CLI do Linux
 
-### Sintaxe de comandos: comando \[opcoes...] \[argumentos...]
+### Sintaxe de comandos: <code>comando opcoes argumentos</code>
 
 <p>Argumento: específica algo para o comando agir<br>
 Opções: alteram o comportamento do comando<br>
-Exemplo: o comando <code>ls</code> imprime uma lista de arquivos na tela, e exsitem as opções <code>l</code>(long),<br>
-que imprime mais informações na tela e <code>r</code>(reverse), que inverte a ordem da lista<br>
-Comandos: <code>ls -r</code> ,<code>ls -l -r</code>, <code>ls -lr</code><p>
+Exemplo: o comando <code>ls</code> imprime uma lista de arquivos na tela, e exsitem as opções <code>l</code> (long),<br>
+que imprime mais informações na tela e <code>r</code> (reverse), que inverte a ordem da lista<br>
+Comandos: <code>ls -r</code> ,<code>ls -l -r</code>, <code>ls -lr</code></p>
 
 ### Imprimir o diretório atual de trabalho
 
-<code>pwd \[opcoes...]</code>
+<code>pwd opcoes</code>
 
 ### Mudar diretório: <code>cd</code>
 
 |||
 |-|-|
-|<code>cd \[opcoes...] \[caminho]</code>|muda o diretório de trabalho|
+|<code>cd opcoes caminho</code>|muda o diretório de trabalho|
 |<code>cd ..</code>|volta um diretório|
 |<code>cd ~</code>|pula para o diretório home|
 
@@ -24,13 +24,12 @@ Comandos: <code>ls -r</code> ,<code>ls -l -r</code>, <code>ls -lr</code><p>
 
 |||
 |-|-|
-|<code>ls \[opcoes...] \[argumentos...]</code>|se usado sem argumentos, lista arquivos do diretório atual|
+|<code>ls opcoes argumentos</code>|se usado sem argumentos, lista arquivos do diretório atual|
 |<code>ls -l</code>|lista longa, com mais detalhes dos arquivos|
 
 #### Exemplo do comando <code>ls -l</code>
 
-<code>
-sysadmin@localhost:~$ ls -l /var/log/
+<p><code>sysadmin@localhost:~$ ls -l /var/log/
 total 844
 -rw-r--r-- 1 root   root  18047 Dec 20  2017 alternatives.log
 drwxr-x--- 2 root   adm    4096 Dec 20  2017 apache2
@@ -47,11 +46,11 @@ drwxr-xr-x 2 root   root   4096 Dec  7  2017 fsck
 -rw-rw-r-- 1 root   utmp 292584 Oct  2 19:57 lastlog
 -rw-r----- 1 syslog adm   19573 Oct  2 22:57 syslog
 drwxr-xr-x 2 root   root   4096 Apr 11  2014 upstart
--rw-rw-r-- 1 root   utmp    384 Oct  2 19:57 wtmp</code>
+-rw-rw-r-- 1 root   utmp    384 Oct  2 19:57 wtmp</code></p>
 
 #### Tipos de arquivo
 
-<p>Primeiro digito no exemplo acima: <code>-</code> e <code>d</code></p>
+Primeiro digito no exemplo acima: <code>-</code> e <code>d</code>
 
 |||
 |-|-|
@@ -71,7 +70,7 @@ No exemplo: <code>rw-r--r--</code> e <code>rwxr-x---</code></p>
 #### Contagem de links físicos/rígidos
 
 <p>Após o indicador de permissões: Indicam quantos links físicos/rigidos apontam para o arquivo<br>
-No exemplo: <code>1</code> e <code>2</code><\p>
+No exemplo: <code>1</code> e <code>2</code></p>
 
 #### Proprietário do usuário
 
@@ -85,7 +84,7 @@ No exemplo: <code>utmp</code> e <code>adm</code> e <code>root</code></p>
 
 #### Tamanho do arquivo
 
-<p>Logo após a indicação do grupo. Arquivos pequenos em bytes, arquivos grandes em kilobytes</p>
+Logo após a indicação do grupo. Arquivos pequenos em bytes, arquivos grandes em kilobytes
 
 #### Ordenação(opções) do comando <code>ls</code>
 
@@ -98,12 +97,12 @@ No exemplo: <code>utmp</code> e <code>adm</code> e <code>root</code></p>
 ### Acesso administrativo
 
 <p>Permite atuar temporariamente com acesso administrativo<br>
-<code>su \[opcoes] \[nome]</code><br>
-Se o nome não for especificado, o comando abrirá um shell como usuário root</p
+<code>su opcoes nome</code><br>
+Se o nome não for especificado, o comando abrirá um shell como usuário root</p>
 
 #### Opção de login
 
-<p>Configura o shell com as configurações do novo usuário: <code>su -</code>, <code>su -l</code> ou <code>su --login</code></p>
+Configura o shell com as configurações do novo usuário: <code>su -</code>, <code>su -l</code> ou <code>su --login</code>
 
 #### Comando <code>sudo</code>
 
@@ -129,7 +128,8 @@ As permissões do exemplo acima são:</p>
 |<code>x</code>|permite executar como processo,<br>arquivos script exigem<br>permissão de leitura|permite mudar para um diretório,<br>se o diretório pai tiver a mesma<br>permissão (de execução)|
 
 ### Alterar permissões de arquivos: <code>chmod</code>
-<p>Método simbólico: <code>chmod CONJUNTO AÇAO PERMISSÕES ARQUIVO</code><br>
+
+<p>Método simbólico: <code>chmod CONJUNTO AÇAO PERMISSÕES ARQUIVO</code></p>
 
 |conjunto|descrição|
 |-|-|
@@ -144,90 +144,99 @@ As permissões do exemplo acima são:</p>
 |<code>-</code>|remover permissão|
 |<code>=</code>|especificar permissão exata|
 
-Permissões, especificar uma ou mais: <code>r</code>, <code>w</code> e <code>x</code>
+<p>Permissões, especificar uma ou mais: <code>r</code>, <code>w</code> e <code>x</code></p>
 
-Alterar propriedades de arquivos
-chown \[OPÇÕES] \[PROPRIETÁRIO] ARQUIVO
-Proprietário: indicado qual usuário será o novo proprietário do arquivo.
-sudo 	usar para obter privilégios administrativos necessários
+### Alterar propriedades de arquivos> <code>chown</code>
 
-Exibir arquivos
-cat \[OPÇÕES] \[ARQUIVO]	exibirá todo o conteúdo do arquivo, uso recomendado para arquivos pequenos
-head \[OPÇÕES] \[ARQUIVO]	exibe somente linhas superiores de um arquivo grande
-tail \[OPÇÕES] \[ARQUIVO]	exibe linhas da parte inferior de um arquivo grande
-head -n n\_de\_linhas \[ARQUIVO]	para especificar a quantidade de linhas que serão exibidas pelo comando "head" ou "tail"
+<p>Comando: <code>chown OPÇÕES PROPRIETÁRIO ARQUIVO</code><br>
+Proprietário: indica qual usuário será o novo proprietário do arquivo<br>
+Usar <code>sudo</code> para obter privilégios administrativos necessários</p>
 
-Copiar arquivos
-Comando cp, ou dd (copiar a nível de bits):
-cp \[OPÇÕES] FONTE DESTINO
-dd \[OPÇÕES] OPERANDO
-Argumentos de dd
-Exemplo:
-dd if=/dev/zero of=/tmp/swapex bs=1M count=50
-argumento	exemplo	descrição
-if	/dev/zero	arquivo de entrada, que será lido
-of	/tmp/swapex	arquivo de saída, que será gravado
-bs	1M	tamanho do bloco que será usado, pode ser: K(kilobytes), M(megabytes), G(gigabytes) ou T(terabytes)
-count	50	número da contagem dos plocos a partir do arquivo de entrada
+### Exibir arquivos
 
-Mover arquivos
-mv FONTE DESTINO
-Fonte: é o arquivo em questão
-Destino: local de destino. Se for indicado como o nome de um arquivo, o arquivo fonte será renomeado pelo nome do destino
-Exemplo:
-mv animals.txt zoo.txt	renomeia animals.txt para zoo.txt
+|||
+|-|-|
+|<code>cat opcoes arquivo</code>|concatenar: exibirá todo o conteúdo do arquivo,<br> uso recomendado para arquivos pequenos|
+|<code>head opcoes arquivo</code>|exibe somente linhas superiores|
+|<code>tail opcoes arquivo</code>|exibe linhas da parte inferior|
+|<code>head -n numDeLinhas arquivo</code>|para especificar a quantidade de linhas que<br> serão exibidas pelos comandos <code>head</code> ou <code>tail</code>|	
 
-Remover arquivos
-Remove arquivos permanentemente
-rm \[OPÇÕES] ARQUIVO
-Sem instrução(opções): remove arquivos regulares
-Opção recursiva:
--r, -R	remove todos os arquivos e subdiretórios
+### Copiar arquivos
 
-Filtragem de entrada
-grep \[OPÇÕES] PADRÃO \[ARQUIVO]
-Padrão: é o termo que será pesquisado no \[ARQUIVO]
+<p>Comando <code>cp</code>, ou <code>dd</code> (copiar a nível de bits)<br>
+Sintaxe: <code>cp OPÇÕES FONTE DESTINO</code>, <code>dd OPÇÕES OPERANDO</code></p>
 
-Expressões regulares
-Caracteres básicos
-caractere Regex básico	descrição
-.	qualquer caractere único
-\[ ]	qualquer caractere específicado
-\[^ ]	não é o caractere especificado
+#### Argumentos de dd
 
-* zero ou mais caracteres anteriores
-  ^	se for o primeiro caractere do padrão: o padrão deve estar no inicio da linha para corresponder
-  se não for o primeiro caractere: apenas um "^" literal
-  $	se for o úttimo caractere do padrão: o padrão deve estar no final da linha para corresponder
-  se não for o último caractere: apenas um "$" literal
-  Expressões estendidas
-  Devem ser usadas com comandos:
-  egrep
-  grep -E
-  caracteres Regex extendidos	descrição
-* um ou mais do padrão anterior
-  ?	o padrão anterior é opcional
-  { }	especifica correspondência mínima, máxima ou exata do padrão anterior
-  |	alternação: um "OR" (ou) lógico
-  ( )	criar grupos
+<p>Exemplo: <code>dd if=/dev/zero of=/tmp/swapex bs=1M count=50</code></p>
 
-Desligando
-shutdown \[OPÇÕES] TEMPO \[MENSAGEM]
+|argumento|descrição|
+|-|-|
+|<code>if</code>|arquivo de entrada, que será lido|
+|<code>of</code>|arquivo de saída, que será gravado|
+|<code>bs</code>|tamanho do bloco que será usado,<b>pode ser: <code>K</code>(kilobytes), <code>M</code>(megabytes),<br><code>G</code>(gigabytes) ou <code>T</code>(terabytes)|
+|<code>count</code>|número da contagem dos blocos<b>a partir do arquivo de entrada|
 
-Configuração de rede
-ifconfig \[OPÇÕES]	configurações de interface
-iwconfig \[OPÇÕES]	configurações wireless
-ping -c n\_de\_pings	verificar a conectividade
+### Mover arquivos: <code>mv FONTE DESTINO</code>
 
-Exibindo processos
-ps \[OPÇÕES]
-Processos em execução
-sysadmin@localhost:~$ ps
+<p>Fonte: é o arquivo em questão<br>
+Destino: local de destino. Se for indicado como o nome de um arquivo,<br>
+o arquivo fonte será renomeado pelo nome do arquivo de destino<br>
+Exemplo: <code>mv animals.txt zoo.txt</code>, renomeia animals.txt para zoo.txt</p>
+
+### Remover arquivos <code>rm OPÇÕES ARQUIVO</code>
+
+<p>Remove arquivos permanentemente<br>
+Sem instrução(opções): remove arquivos regulares<br>
+Opção recursiva: <code>-r</code> ou <code>-R</code>, remove todos os arquivos e subdiretórios</p>
+
+### Filtragem de entrada
+
+<p>Comando: <cod>grep OPÇÕES PADRÃO ARQUIVO</code><br>
+PADRÃO: é o termo que será pesquisado em ARQUIVO</p>
+
+#### Caracteres básicos
+
+|caractere Regex básico|descrição|
+|-|-|
+|<code>.</code>|qualquer caractere único|
+|<code>[ ]</code>|qualquer caractere específicado|
+|<code>[^ ] </code>|não é o caractere especificado|
+|<code>*</code>|zero ou mais caracteres anteriores|
+|<code>^</code>|se for o primeiro caractere do padrão:<br> o padrão deve estar no inicio da linha para<br>corresponder; se não for o primeiro caractere:<br> apenas um <code>^</code> literal|
+|<code>$</code>|se for o úttimo caractere do padrão:<br> o padrão deve estar no final da linha para<br> corresponder; se não for o último caractere:<br> apenas um <code>$</code> literal|
+
+#### Expressões estendidas
+<p>Devem ser usadas com comandos: <code>egrep</code> ou <code>grep -E</code></p>
+
+|caracteres Regex extendidos|descrição|
+|-|-|
+|<code>+</code>|um ou mais do padrão anterior|
+|<code>?</code>|o padrão anterior é opcional|
+|<code>{ }</code>|especifica correspondência mínima,<br>máxima ou exata do padrão anterior|
+|<code>\|</code>|alternação: um <code>OR</code> (ou) lógico|
+|<code>( )</code>|criar grupos|
+
+### Desligando: <code>shutdown OPÇÕES TEMPO MENSAGEM</code>
+
+### Configuração de rede
+
+|||
+|-|-|
+|<code>ifconfig OPÇÕES</code>|configurações de interface|
+|<code>iwconfig OPÇÕES</code>|configurações wireless|
+|<code>ping -c mumDePings</code>|verificar a conectividade|
+
+### Exibindo processos: <code>ps OPÇÕES</code>
+
+<p>Processos em execução:<br>
+<code>sysadmin@localhost:~$ ps
 PID TTY          TIME CMD
 80 pts/0        00:00:00 bash
-94 pts/0        00:00:00 ps
-Exibir todos os processsos
-sysadmin@localhost:~$ ps -e
+94 pts/0        00:00:00 ps</code></p>
+
+<p>Exibir todos os processsos<br>
+<code>sysadmin@localhost:~$ ps -e
 PID TTY          TIME CMD  
 1 pts/0        00:00:00 init  
 33 ?            00:00:00 rsyslogd  
@@ -236,24 +245,29 @@ PID TTY          TIME CMD
 56 ?            00:00:00 named  
 69 pts/0        00:00:00 login  
 79 pts/0        00:00:00 bash  
-94 pts/0        00:00:00 ps
-Exibir todos os processos de forma detalhada
-Inclui detalhes na saída do comando: como opões e argumentos
-sysadmin@localhost:~$ ps -ef
-UID        PID  PPID  C STIME TTY      TIME CMD  
-root         1     0  0 19:16 pts/0    00:00:00 /sbin??? /init  
-syslog      33     1  0 19:16 ?        00:00:00 /usr/sbin/rsyslogd  
-root        37     1  0 19:16 ?        00:00:00 /usr/sbin/cron  
-root        39     1  0 19:16 ?        00:00:00 /usr/sbin/sshd  
-bind        56     1  0 19:16 ?        00:00:00 /usr/sbin/named -u bind  
-root        69     1  0 19:16 pts/0    00:00:00 /bin/login -f  
-sysadmin    79    69  0 19:16 pts/0    00:00:00 -bash  
-sysadmin    95    79  0 19:43 pts/0    00:00:00 ps -ef  
-Identificadores de processo
-PTD	id do processo, exclusivo para cada processo
-TTY	nome do terminal de execução do processo
-TIME	tempo usado pelo processo
-CMD	comando que iniciou o processo
+94 pts/0        00:00:00 ps</code></p>
+
+<p>Exibir todos os processos de forma detalhada<br>
+Inclui detalhes na saída do comando, como opões e argumentos<br>
+<code>sysadmin@localhost:~$ ps -ef
+UID        PID  PPID  C STIME TTY      TIME CMD
+root         1     0  0 19:16 pts/0    00:00:00 /sbin??? /init
+syslog      33     1  0 19:16 ?        00:00:00 /usr/sbin/rsyslogd
+root        37     1  0 19:16 ?        00:00:00 /usr/sbin/cron
+root        39     1  0 19:16 ?        00:00:00 /usr/sbin/sshd
+bind        56     1  0 19:16 ?        00:00:00 /usr/sbin/named -u bind
+root        69     1  0 19:16 pts/0    00:00:00 /bin/login -f
+sysadmin    79    69  0 19:16 pts/0    00:00:00 -bash
+sysadmin    95    79  0 19:43 pts/0    00:00:00 ps -ef</code></p>
+
+<p>Identificadores de processo</p>
+
+|||
+|-|-|
+|<code>PTD</code>|id do processo, exclusivo para cada processo|
+|<code>TTY</code>|nome do terminal de execução do processo|
+|<code>TIME</code>|tempo usado pelo processo|
+|<code>CMD</code>|comando que iniciou o processo|
 
 ### Gerenciamento de pacotes
 
@@ -265,18 +279,19 @@ CMD	comando que iniciou o processo
 #### Comandos <code>apt</code>
 
 <p>Para utilização do <code>apt</code> é recomendado o uso do comando <code>sudo</code></p>
+
 | | |
-|:-|:-|
+|-|-|
 | <code>sudo apt-get update</code> | atualiza a lista de pacotes disponíveis |
 | <code>sudo apt-get upgrade</code> | todos os pacotes/dependências disponíveis serão atualizados |
-| <code>apt-cache seach \\\[palavra chave]</code> | procura por nome ou descrição de algum pacote |
-| <code>sudo apt-get install \\\[pacote]</code> | instala o pacote especificado |
-| <code>sudo apt-get remove \\\[pacote]</code> | Remove o pacote especificado |
-| <code>sudo apt-get purge \\\[pacote]</code> | limpa completamente o pacote especificado |
+| <code>apt-cache seach (palavra chave)</code> | procura por nome ou descrição de algum pacote |
+| <code>sudo apt-get install pacote</code> | instala o pacote especificado |
+| <code>sudo apt-get remove pacote</code> | Remove o pacote especificado |
+| <code>sudo apt-get purge pacote</code> | limpa completamente o pacote especificado |
 
 ### Atualizar senhas
 
-<code>passwd \[OPÇÕES] \[USUÁRIO]</code>
+<code>passwd OPÇÕES USUÁRIO</code>
 
 #### Exemplo do comando <code>passwd</code>
 
@@ -302,8 +317,4 @@ Substituir: <code>echo "conteúdo" > ARQUIVO</code>, substitui o conteúdo de AR
 Anexar: <code>echo "conteúdo" >> ARQUIVO</code>, anexa "conteúdo" ao ARQUIVO</p>
 
 ### Editor de texto
-
-
-
-
 
