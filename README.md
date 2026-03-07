@@ -1,8 +1,7 @@
-# general-studies
+# Estudos gerais
 
 Repositório para arquivos de estudos em geral
 
 ## Markdown
 
-<p>Utilizarei incialmente arquivos .md como forma de<b>
-praticar a sitaxe do markdown</p>
+Utilizarei incialmente arquivos `.md` como forma de praticar a sitaxe do Markdown
